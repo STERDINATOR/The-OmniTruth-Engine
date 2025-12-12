@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniTruth Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              parchment: {
+                DEFAULT: '#F7EAC8',
+                dark: '#E6D5A7',
+                light: '#FFF8E1'
+              },
+              gold: {
+                DEFAULT: '#D6A756',
+                metallic: '#C59346'
+              },
+              maroon: {
+                DEFAULT: '#6A0B1E',
+                dark: '#4A0513'
+              },
+              ink: {
+                DEFAULT: '#1F1B18',
+                light: '#2D2824'
+              },
+              bronze: '#9C6C3C',
+              antiqueBlue: '#254F6E'
+            },
+            fontFamily: {
+              title: ['"Cinzel Decorative"', 'cursive'],
+              heading: ['"Cormorant Garamond"', 'serif'],
+              body: ['"EB Garamond"', 'serif'],
+              button: ['"Uncial Antiqua"', 'cursive']
+            },
+            backgroundImage: {
+              'parchment-texture': "url('https://www.transparenttextures.com/patterns/aged-paper.png')"
+            },
+            keyframes: {
+              'subtle-zoom': {
+                '0%': { opacity: '0', transform: 'scale(0.96)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              'spin-slow': {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+              'ink-in': {
+                '0%': { opacity: '0', transform: 'translateY(15px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
+            animation: {
+              'subtle-zoom': 'subtle-zoom 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'spin-slow': 'spin-slow 12s linear infinite',
+              'ink-in': 'ink-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F7EAC8;
+        color: #1F1B18;
+      }
+      .scroll-container::-webkit-scrollbar {
+        width: 8px;
+      }
+      .scroll-container::-webkit-scrollbar-track {
+        background: #E6D5A7;
+      }
+      .scroll-container::-webkit-scrollbar-thumb {
+        background: #9C6C3C;
+        border-radius: 4px;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "react": "https://esm.sh/react@^19.2.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
